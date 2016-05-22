@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import postcssPlugins from './postcss-plugins';
 import pluginOptionsWrapper from './options';
 import getOutputPath from './get-output-path';

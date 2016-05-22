@@ -1,5 +1,5 @@
 import { text as importedText } from './text-to-import.js';
-import styles from './hello.mss';
+import styles from './hello.sss';
 
 console.dir(styles)
 // counter starts at 0

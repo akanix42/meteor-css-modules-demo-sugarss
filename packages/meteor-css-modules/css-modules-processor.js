@@ -1,8 +1,8 @@
+import { Meteor } from 'meteor/meteor';
 import postcssPlugins from './postcss-plugins';
 import pluginOptionsWrapper from './options';
 import getOutputPath from './get-output-path';
 
-const sugarss = Npm.require('sugarss');
 const postcss = Npm.require('postcss');
 const Parser = Npm.require('css-modules-loader-core/lib/parser');
 const pluginOptions = pluginOptionsWrapper.options;
@@ -71,11 +71,12 @@ export default class CssModulesProcessor {
 	load(sourceString, sourcePath, trace, pathFetcher) {
 		const parser = new Parser(pathFetcher, trace);
 		sourcePath = ImportPathHelpers.getAbsoluteImportPath(sourcePath);
-		return postcss(postcssPlugins.concat([parser.plugin]), { parser: sugarss })
+		return postcss(postcssPlugins.concat([parser.plugin]))
 			.process(sourceString, {
 				from: sourcePath,
 				to: getOutputPath(sourcePath, pluginOptions.outputCssFilePath),
-				map: {inline: false}
+				map: {inline: false},
+				parser: pluginOptions.parser ? Npm.require(pluginOptions.parser) : undefined
 			})
 			.then(result => {
 				return {injectableSource: result.css, exportTokens: parser.exportTokens, sourceMap: result.map.toJSON()};

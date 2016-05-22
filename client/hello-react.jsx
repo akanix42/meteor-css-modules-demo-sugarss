@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { text as importedText } from './text-to-import.js';
-import { styles } from './hello.mss';
+import { styles } from './hello.sss';
 
 export class App extends React.Component {
     render() {

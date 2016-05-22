@@ -21,6 +21,12 @@
     "postcss-simple-vars": "1.1.0"
   },
   "cssModules": {
+    "enableSassCompilation": false,
+    "enableStylusCompilation": false,
+    "extensions": [
+      "sss"
+    ],
+    "parser": "sugarss",
     "postcssPlugins": {
       "postcss-simple-vars": {
         "inlineOptions": {
@@ -29,7 +35,7 @@
           }
         },
         "fileOptions": [
-          "client/colors.mss",
+          "client/colors.txt",
           "client/fonts.json"
         ]
       },

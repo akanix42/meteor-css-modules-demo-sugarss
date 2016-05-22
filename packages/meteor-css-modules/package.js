@@ -18,7 +18,6 @@ Package.registerBuildPlugin({
 		'underscore@1.0.7',
 	],
 	npmDependencies: {
-		"sugarss": "0.1.3",
 		"app-module-path": "1.0.4",
 		"cjson": "0.3.3",
 		"css-modules-loader-core": "1.0.0",
@@ -32,6 +31,7 @@ Package.registerBuildPlugin({
 		"recursive-readdir": "1.3.0",
 		"string-template": "1.0.0",
 		"stylus": "0.54.2",
+		"sugarss": "0.1.3",
 	},
 	sources: [
 		'sha1.js',
